@@ -6,9 +6,11 @@
 
 using namespace std;
 
-Complex::Complex(double NRe, double NIm) {
-    main_Re = NRe;
-    main_Im = NIm;
+Complex::Complex(double firstUserInputRe, double firstUserInputIm, double secondUserInputRe, double secondUserInputIm) {
+    main_Re = firstUserInputRe;
+    main_Im = firstUserInputIm;
+    second_Re = secondUserInputRe;
+    second_Im = secondUserInputIm;
 
 }
 

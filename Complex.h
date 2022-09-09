@@ -9,7 +9,7 @@
 class Complex {
     double main_Re, main_Im, second_Re = 10, second_Im = 5, result_Rm=0, result_Im=0;
 public:
-    Complex(double NRe, double NIm);
+    Complex(double firstUserInputRe, double firstUserInputIm, double secondUserInputRm, double secondUserInputIm);
 
     double addition();
 
