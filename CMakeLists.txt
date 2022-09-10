@@ -3,4 +3,4 @@ project(First_Lab)
 
 set(CMAKE_CXX_STANDARD 14)
 
-add_executable(First_Lab main.cpp Complex.cpp Complex.h)
+add_executable(First_Lab main.cpp Complex.cpp Complex.h Matrix.cpp Matrix.h)

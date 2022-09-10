@@ -7,19 +7,20 @@
 
 
 class Complex {
-    double main_Re, main_Im, second_Re = 10, second_Im = 5, result_Rm=0, result_Im=0;
 public:
-    Complex(double firstUserInputRe, double firstUserInputIm, double secondUserInputRm, double secondUserInputIm);
+    double Re, Im, result_Rm=0, result_Im=0;
+    Complex(double UserInputRe, double UserInputIm);
 
-    double addition();
+    double addition(double second_Re, double second_Im);
 
-    double substraction();
+    double substraction(double second_Re, double second_Im);
 
-    double division();
+    double division(double second_Re, double second_Im);
 
-    double multiplication();
+    double multiplication(double second_Re, double second_Im);
 
     void get_result() const;
+
 };
 
 

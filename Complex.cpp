@@ -6,36 +6,33 @@
 
 using namespace std;
 
-Complex::Complex(double firstUserInputRe, double firstUserInputIm, double secondUserInputRe, double secondUserInputIm) {
-    main_Re = firstUserInputRe;
-    main_Im = firstUserInputIm;
-    second_Re = secondUserInputRe;
-    second_Im = secondUserInputIm;
-
+Complex::Complex(double UserInputRe, double UserInputIm) {
+    Re = UserInputRe;
+    Im = UserInputIm;
 }
 
-double Complex::substraction() {
-    result_Rm = main_Re - second_Re;
-    result_Im = main_Im - second_Im;
+double Complex::substraction(double second_Re, double second_Im) {
+    result_Rm = Re - second_Re;
+    result_Im = Im - second_Im;
 
     return 0;
 }
 
-double Complex::addition() {
-    result_Rm = main_Re + second_Re;
-    result_Im = main_Im + second_Im;
+double Complex::addition(double second_Re, double second_Im) {
+    result_Rm = Re + second_Re;
+    result_Im = Im + second_Im;
     return 0;
 }
 
-double Complex::division() {
-    result_Rm = ((main_Re * second_Re + main_Im * second_Im) / (second_Re * second_Re + second_Im * second_Im));
-    result_Im = ((main_Im * second_Re - main_Re * second_Im) / (second_Re * second_Re + second_Im * second_Im));
+double Complex::division(double second_Re, double second_Im) {
+    result_Rm = ((Re * second_Re + Im * second_Im) / (second_Re * second_Re + second_Im * second_Im));
+    result_Im = ((Im * second_Re - Re * second_Im) / (second_Re * second_Re + second_Im * second_Im));
     return 0;
 }
 
-double Complex::multiplication() {
-    result_Rm = (main_Re * second_Re - main_Im * second_Im);
-    result_Im = (main_Re * second_Im + main_Im * second_Re);
+double Complex::multiplication(double second_Re, double second_Im) {
+    result_Rm = (Re * second_Re - Im * second_Im);
+    result_Im = (Re * second_Im + Im * second_Re);
     return 0;
 }
 
@@ -43,5 +40,6 @@ void Complex::get_result() const {
     if (result_Im >= 0) { cout << "result = " << result_Rm << "+" << result_Im << "i" << endl; }
     else { cout << "result = " << result_Rm << result_Im << "i" << endl; }
 }
+
 
 
