@@ -2,6 +2,7 @@
 #include "Matrix.h"
 #include <iostream>
 
+
 using namespace std;
 
 void matrix();
@@ -9,7 +10,7 @@ void matrix();
 void complex();
 
 int main() {
-    //complex();
+    complex();
     matrix();
     return 0;
 }
@@ -43,7 +44,26 @@ void complex() {
 }
 
 void matrix() {
-    Matrix first(2, 5);
+    Matrix first(2, 2);
+    Matrix second(2, 2);
+    Matrix result(2, 2);
+
     first.Filling();
-    first.get();
+    second.Filling();
+
+    result = first.add(second);
+    result.get();
+
+    result = first.multiplication(second);
+    result.get();
+
+    result = first.substraction(second);
+    result.get();
+
+    first.StringElementsSum();
+    first.ColumnElementsSum();
+
+    second.StringElementsSum();
+    second.ColumnElementsSum();
+
 }

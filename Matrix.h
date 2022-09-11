@@ -10,12 +10,26 @@
 
 class Matrix {
 private:
-    int *matrix, columns_count, strings_count;
+    int **matrix, columns_count, strings_count;
 
 public:
     Matrix(int ColumnsCount, int StringsCounts);
+    Matrix();
+
     void Filling();
+
+    Matrix add(Matrix SecondMatrix);
+
+    Matrix substraction(Matrix SecondMatrix);
+
+    Matrix multiplication(Matrix SecondMatrix);
+
+    double ColumnElementsSum();
+
+    double StringElementsSum();
+
     void get();
+
 };
 
 
