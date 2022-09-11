@@ -10,14 +10,12 @@
 
 class Matrix {
 private:
-    int *matrix, string_count, columns_count;
+    int *matrix, columns_count, strings_count;
 
 public:
-    Matrix(int user_string_count, int user_columns_count);
-    int makingMatrix();
-    void get_result();
-
-
+    Matrix(int ColumnsCount, int StringsCounts);
+    void Filling();
+    void get();
 };
 
 
