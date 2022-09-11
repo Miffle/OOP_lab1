@@ -8,16 +8,16 @@
 
 class Complex {
 public:
-    double Re, Im, result_Rm=0, result_Im=0;
+    double Re, Im;
     Complex(double UserInputRe, double UserInputIm);
+    Complex();
+    Complex addition(Complex secondComplex);
 
-    double addition(double second_Re, double second_Im);
+    Complex substraction(Complex secondComplex);
 
-    double substraction(double second_Re, double second_Im);
+    Complex division(Complex secondComplex);
 
-    double division(double second_Re, double second_Im);
-
-    double multiplication(double second_Re, double second_Im);
+    Complex multiplication(Complex secondComplex);
 
     void get_result() const;
 

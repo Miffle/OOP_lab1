@@ -10,36 +10,47 @@ Complex::Complex(double UserInputRe, double UserInputIm) {
     Re = UserInputRe;
     Im = UserInputIm;
 }
-
-double Complex::substraction(double second_Re, double second_Im) {
-    result_Rm = Re - second_Re;
-    result_Im = Im - second_Im;
-
-    return 0;
+Complex::Complex() {
+    Re = 0;
+    Im = 0;
 }
 
-double Complex::addition(double second_Re, double second_Im) {
-    result_Rm = Re + second_Re;
-    result_Im = Im + second_Im;
-    return 0;
+Complex Complex::substraction(Complex secondComplex) {
+    Complex resultComplex = *new Complex();
+    resultComplex.Re = Re - secondComplex.Re;
+    resultComplex.Im = Im - secondComplex.Im;
+    return resultComplex;
 }
 
-double Complex::division(double second_Re, double second_Im) {
-    result_Rm = ((Re * second_Re + Im * second_Im) / (second_Re * second_Re + second_Im * second_Im));
-    result_Im = ((Im * second_Re - Re * second_Im) / (second_Re * second_Re + second_Im * second_Im));
-    return 0;
+Complex Complex::addition(Complex secondComplex) {
+    Complex resultComplex = *new Complex();
+    resultComplex.Re = Re + secondComplex.Re;
+    resultComplex.Im = Im + secondComplex.Im;
+    return resultComplex;
 }
 
-double Complex::multiplication(double second_Re, double second_Im) {
-    result_Rm = (Re * second_Re - Im * second_Im);
-    result_Im = (Re * second_Im + Im * second_Re);
-    return 0;
+Complex Complex::division(Complex secondComplex) {
+    Complex resultComplex = *new Complex();
+    resultComplex.Re = ((Re * secondComplex.Re + Im * secondComplex.Im) / (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
+    resultComplex.Im = ((Im * secondComplex.Re - Re * secondComplex.Im) / (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
+    return resultComplex;
+}
+
+
+Complex Complex::multiplication(Complex secondComplex) {
+    Complex resultComplex = *new Complex();
+    resultComplex.Re = (Re * secondComplex.Re - Im * secondComplex.Im);
+    resultComplex.Im = (Re * secondComplex.Im + Im * secondComplex.Re);
+    return resultComplex;
 }
 
 void Complex::get_result() const {
-    if (result_Im >= 0) { cout << "result = " << result_Rm << "+" << result_Im << "i" << endl; }
-    else { cout << "result = " << result_Rm << result_Im << "i" << endl; }
+    if (Im >= 0) { cout << "result = " << Re << "+" << Im << "i" << endl; }
+    else { cout << "result = " << Re << Im << "i" << endl; }
 }
+
+
+
 
 
 
