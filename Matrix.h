@@ -14,7 +14,6 @@ private:
 
 public:
     Matrix(int ColumnsCount, int StringsCounts);
-    Matrix();
 
     void Filling();
 
