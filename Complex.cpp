@@ -15,21 +15,21 @@ Complex::Complex() {
     Im = 0;
 }
 
-Complex Complex::substraction(Complex secondComplex) {
+Complex Complex::subtraction(Complex secondComplex) const {
     Complex resultComplex = *new Complex();
     resultComplex.Re = Re - secondComplex.Re;
     resultComplex.Im = Im - secondComplex.Im;
     return resultComplex;
 }
 
-Complex Complex::addition(Complex secondComplex) {
+Complex Complex::addition(Complex secondComplex) const {
     Complex resultComplex = *new Complex();
     resultComplex.Re = Re + secondComplex.Re;
     resultComplex.Im = Im + secondComplex.Im;
     return resultComplex;
 }
 
-Complex Complex::division(Complex secondComplex) {
+Complex Complex::division(Complex secondComplex) const {
     Complex resultComplex = *new Complex();
     resultComplex.Re = ((Re * secondComplex.Re + Im * secondComplex.Im) / (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
     resultComplex.Im = ((Im * secondComplex.Re - Re * secondComplex.Im) / (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
@@ -37,7 +37,7 @@ Complex Complex::division(Complex secondComplex) {
 }
 
 
-Complex Complex::multiplication(Complex secondComplex) {
+Complex Complex::multiplication(Complex secondComplex) const {
     Complex resultComplex = *new Complex();
     resultComplex.Re = (Re * secondComplex.Re - Im * secondComplex.Im);
     resultComplex.Im = (Re * secondComplex.Im + Im * secondComplex.Re);

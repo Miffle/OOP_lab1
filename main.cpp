@@ -39,7 +39,7 @@ void complex() {
     resultComplex = FirstComplex.multiplication(SecondComplex);
     resultComplex.get_result();
 
-    resultComplex = FirstComplex.substraction(SecondComplex);
+    resultComplex = FirstComplex.subtraction(SecondComplex);
     resultComplex.get_result();
 }
 

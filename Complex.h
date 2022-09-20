@@ -11,13 +11,13 @@ public:
     double Re, Im;
     Complex(double UserInputRe, double UserInputIm);
     Complex();
-    Complex addition(Complex secondComplex);
+    Complex addition(Complex secondComplex) const;
 
-    Complex substraction(Complex secondComplex);
+    Complex subtraction(Complex secondComplex) const;
 
-    Complex division(Complex secondComplex);
+    Complex division(Complex secondComplex) const;
 
-    Complex multiplication(Complex secondComplex);
+    Complex multiplication(Complex secondComplex) const;
 
     void get_result() const;
 
