@@ -32,8 +32,8 @@ void Matrix::get() {
 }
 
 Matrix Matrix::add(Matrix SecondMatrix) {
-    cout << "Сложение"<<endl;
-    Matrix ResultMatrix = *new Matrix(columns_count, strings_count);
+    cout << "Сложение" << endl;
+    Matrix ResultMatrix(columns_count, strings_count);
     for (int string = 0; string < strings_count; string++) {
         for (int column = 0; column < columns_count; column++) {
             ResultMatrix.matrix[string][column] = matrix[string][column] + SecondMatrix.matrix[string][column];
@@ -42,9 +42,9 @@ Matrix Matrix::add(Matrix SecondMatrix) {
     return ResultMatrix;
 }
 
-Matrix Matrix::substraction(Matrix SecondMatrix) {
-    cout << "Вычитание"<<endl;
-    Matrix ResultMatrix = *new Matrix(columns_count, strings_count);
+Matrix Matrix::subtraction(Matrix SecondMatrix) {
+    cout << "Вычитание" << endl;
+    Matrix ResultMatrix(columns_count, strings_count);
     for (int string = 0; string < strings_count; string++) {
         for (int column = 0; column < columns_count; column++) {
             ResultMatrix.matrix[string][column] = matrix[string][column] - SecondMatrix.matrix[string][column];
@@ -54,13 +54,15 @@ Matrix Matrix::substraction(Matrix SecondMatrix) {
 }
 
 Matrix Matrix::multiplication(Matrix SecondMatrix) {
-    cout << "Умножение"<<endl;
-    Matrix ResultMatrix = *new Matrix(columns_count, strings_count);
-    for (int string = 0; string < columns_count; string++) {
-        for (int column = 0; column < columns_count; column++) {
-            ResultMatrix.matrix[string][column] = 0;
+    cout << "Умножение" << endl;
+    Matrix ResultMatrix(SecondMatrix.columns_count, strings_count);
+    for (int i = 0; i < strings_count; i++)
+    {
+        for (int j = 0; j < SecondMatrix.columns_count; j++)
+        {
+            ResultMatrix.matrix[i][j] = 0;
             for (int k = 0; k < columns_count; k++)
-                ResultMatrix.matrix[string][column] += matrix[string][k] * SecondMatrix.matrix[k][column];
+                ResultMatrix.matrix[i][j] += matrix[i][k] * SecondMatrix.matrix[k][j];
         }
     }
     return ResultMatrix;

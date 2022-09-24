@@ -1,6 +1,3 @@
-//
-// Created by Roman on 09.09.2022.
-//
 #include <iostream>
 #include "Complex.h"
 
@@ -10,35 +7,38 @@ Complex::Complex(double UserInputRe, double UserInputIm) {
     Re = UserInputRe;
     Im = UserInputIm;
 }
+
 Complex::Complex() {
     Re = 0;
     Im = 0;
 }
 
-Complex Complex::substraction(Complex secondComplex) {
-    Complex resultComplex = *new Complex();
+Complex Complex::subtraction(Complex secondComplex) const {
+    Complex resultComplex;
     resultComplex.Re = Re - secondComplex.Re;
     resultComplex.Im = Im - secondComplex.Im;
     return resultComplex;
 }
 
-Complex Complex::addition(Complex secondComplex) {
-    Complex resultComplex = *new Complex();
+Complex Complex::addition(Complex secondComplex) const {
+    Complex resultComplex;
     resultComplex.Re = Re + secondComplex.Re;
     resultComplex.Im = Im + secondComplex.Im;
     return resultComplex;
 }
 
-Complex Complex::division(Complex secondComplex) {
-    Complex resultComplex = *new Complex();
-    resultComplex.Re = ((Re * secondComplex.Re + Im * secondComplex.Im) / (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
-    resultComplex.Im = ((Im * secondComplex.Re - Re * secondComplex.Im) / (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
+Complex Complex::division(Complex secondComplex) const {
+    Complex resultComplex;
+    resultComplex.Re = ((Re * secondComplex.Re + Im * secondComplex.Im) /
+                        (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
+    resultComplex.Im = ((Im * secondComplex.Re - Re * secondComplex.Im) /
+                        (secondComplex.Re * secondComplex.Re + secondComplex.Im * secondComplex.Im));
     return resultComplex;
 }
 
 
-Complex Complex::multiplication(Complex secondComplex) {
-    Complex resultComplex = *new Complex();
+Complex Complex::multiplication(Complex secondComplex) const {
+    Complex resultComplex;
     resultComplex.Re = (Re * secondComplex.Re - Im * secondComplex.Im);
     resultComplex.Im = (Re * secondComplex.Im + Im * secondComplex.Re);
     return resultComplex;

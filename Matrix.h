@@ -1,7 +1,3 @@
-//
-// Created by shakal on 10.09.22.
-//
-
 #ifndef FIRST_LAB_MATRIX_H
 #define FIRST_LAB_MATRIX_H
 
@@ -19,7 +15,7 @@ public:
 
     Matrix add(Matrix SecondMatrix);
 
-    Matrix substraction(Matrix SecondMatrix);
+    Matrix subtraction(Matrix SecondMatrix);
 
     Matrix multiplication(Matrix SecondMatrix);
 
